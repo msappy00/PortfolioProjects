@@ -31,3 +31,17 @@ WHERE continent is not ''
 Group by location
 order by total_death_count DESC 
 
+-- Showing contintents with the highest death count per population
+
+SELECT continent, MAX(CAST(total_deaths as INT)) as total_death_count
+FROM CovidDeaths_csv cdc 
+WHERE continent is not ''
+Group by continent
+order by total_death_count DESC 
+
+-- GLOBAL NUMBERS
+
+SELECT SUM(new_cases) as total_cases, SUM(CAST(new_deaths as INT)) as total_deaths, SUM(CAST(new_deaths as INT))/SUM(New_Cases)*100 as death_rate
+FROM CovidDeaths_csv cdc
+WHERE continent is not ''
+order by 1,2
