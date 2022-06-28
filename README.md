@@ -8,11 +8,9 @@ This first of these projects is built from https://github.com/AlexTheAnalyst/Por
 and a Youtube course taught by Alex at https://www.youtube.com/watch?v=qfyynHBFOsM&list=PLUaB-1hjhk8H48Pj32z4GZgGWyylqv85f
 
 My code differs from the original in the following ways:
- * I'm using LibreOffice Calc (spreadsheet program) instead of Microsoft Excel
- * I'm using DBeaver Universal Database Manager instead of Microsoft SQL Server
-
+* I'm using DBeaver Universal Database Manager instead of Microsoft SQL Server
 * I took the dataset about a year after the original project, so some of the queries had to be adjusted for value size.
-- For example: when converting columns to integers some values now exceed the max int value (2,147,483,647). Those values need to be converted to "bigint" instead of "int".
+* For example: when converting columns to integers some values now exceed the max int value (2,147,483,647). Those values need to be converted to "bigint" instead of "int".
 * The file size for the csv file CovidVaccinations.csv exceeds the 25MB limit set by github, so I've only uploaded the two .xlsx files
 
 The COVID dataset was taken from https://ourworldindata.org/covid-deaths
