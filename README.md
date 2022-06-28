@@ -8,11 +8,11 @@ This first of these projects is built from https://github.com/AlexTheAnalyst/Por
 and a Youtube course taught by Alex at https://www.youtube.com/watch?v=qfyynHBFOsM&list=PLUaB-1hjhk8H48Pj32z4GZgGWyylqv85f
 
 My code differs from the original because I'm using diffent software:
-  LibreOffice Calc (spreadsheet program)
-  DBeaver Universal Database Manager
+ * LibreOffice Calc (spreadsheet program)
+ * DBeaver Universal Database Manager
 
-I took the dataset about a year after the original project, so some of the queries had to be adjusted for value size.
-For example: when converting the new_vaccinations column to integer, the sum value now has exceeded the max int value (2,147,483,647). The column needs to be converted to "bigint" instead of "int".
+* I took the dataset about a year after the original project, so some of the queries had to be adjusted for value size.
+- For example: when converting the new_vaccinations column to integer, the sum value now has exceeded the max int value (2,147,483,647). The column needs to be converted to "bigint" instead of "int".
 
 The COVID dataset was taken from https://ourworldindata.org/covid-deaths
 
@@ -20,13 +20,13 @@ The COVID dataset was taken from https://ourworldindata.org/covid-deaths
 These are courses linked to in the Youtube playlist. I've tagged each with my progress.
 
 Coursera Courses (https://www.coursera.org):
-(auditing in progress) Google Data Analyst Certification
-(not yet attempted) Data Analysis with Python
-(not yet attempted) IBM Data Analysis Specialization
-(not yet attempted) Tableau Data Visualization
+* (auditing in progress) Google Data Analyst Certification
+* (not yet attempted) Data Analysis with Python
+* (not yet attempted) IBM Data Analysis Specialization
+* (not yet attempted) Tableau Data Visualization
 
 Udemy Courses (https://www.udemy.com):
-(not yet attempted) Python for Data Analysis and Visualization
-(not yet attempted) Statistics for Data Science
-(not yet attempted) SQL for Data Analysts (SSMS)
-(not yet attempted) Tableau A-Z
+* (not yet attempted) Python for Data Analysis and Visualization
+* (not yet attempted) Statistics for Data Science
+* (not yet attempted) SQL for Data Analysts (SSMS)
+* (not yet attempted) Tableau A-Z
