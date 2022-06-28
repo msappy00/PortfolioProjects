@@ -11,9 +11,13 @@ My code differs from the original because I'm using diffent software:
   LibreOffice Calc (spreadsheet program)
   DBeaver Universal Database Manager
 
+I took the dataset about a year after the original project, so some of the queries had to be adjusted for value size.
+For example: when converting the new_vaccinations column to integer, the sum value now has exceeded the max int value (2,147,483,647). The column needs to be converted to "bigint" instead of "int".
+
 The COVID dataset was taken from https://ourworldindata.org/covid-deaths
 
 
+These are courses linked to in the Youtube playlist. I've tagged each with my progress.
 
 Coursera Courses (https://www.coursera.org):
 (auditing in progress) Google Data Analyst Certification
