@@ -5,8 +5,10 @@ The end in mind is to contribute to an opensource project or find employment as 
 1) COVID Data Exploration (SQL Data Exploration)
 ![alt text](https://github.com/msappy00/PortfolioProjects/blob/main/covid_deaths.png?raw=true)
 
-This first of these projects is built from https://github.com/AlexTheAnalyst/PortfolioProjects
-and a YouTube course taught by Alex at https://www.youtube.com/watch?v=qfyynHBFOsM&list=PLUaB-1hjhk8H48Pj32z4GZgGWyylqv85f
+2) Tableau Visualization (Data Visualization)
+
+The first two projects were built from https://github.com/AlexTheAnalyst/PortfolioProjects
+and a YouTube series taught by Alex The Analyst at https://www.youtube.com/watch?v=qfyynHBFOsM&list=PLUaB-1hjhk8H48Pj32z4GZgGWyylqv85f
 
 My code differs from the original in the following ways:
 * I'm using DBeaver Universal Database Manager instead of Microsoft SQL Server
@@ -16,9 +18,7 @@ My code differs from the original in the following ways:
 
 The COVID dataset was taken from https://ourworldindata.org/covid-deaths
 
-2) Tableau Visualization (Data Visualization)
-
-These are courses linked to in the YouTube playlist. I've tagged each with my progress:
+These are courses on my todo list. I've tagged each with my progress:
 
   Coursera Courses (https://www.coursera.org):
   * (auditing in progress) Google Data Analyst Certification
