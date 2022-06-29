@@ -3,7 +3,7 @@ A set of projects to showcase what I'm learning in the field of data analysis.
 The end in mind is to contribute to an opensource project or find employment as a data analyst.
 
 1) COVID Data Exploration (SQL Data Exploration)
-![alt text](https://github.com/msappy00/PortfolioProjects/blob/covid_deaths.png?raw=true)
+![alt text](https://github.com/msappy00/PortfolioProjects/blob/main/covid_deaths.png?raw=true)
 
 This first of these projects is built from https://github.com/AlexTheAnalyst/PortfolioProjects
 and a YouTube course taught by Alex at https://www.youtube.com/watch?v=qfyynHBFOsM&list=PLUaB-1hjhk8H48Pj32z4GZgGWyylqv85f
