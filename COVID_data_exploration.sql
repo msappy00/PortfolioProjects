@@ -36,7 +36,7 @@ order by total_death_count DESC
 
 SELECT continent, MAX(CAST(total_deaths as INT)) as total_death_count
 FROM CovidDeaths_csv cdc 
-WHERE continent is not null
+WHERE continent is not ''
 Group by continent
 order by total_death_count DESC 
 
@@ -48,7 +48,7 @@ WHERE continent is not null
 order by 1,2
 
 -- Total Population vs Vaccinations
--- Shows Percentage of Population that has recieved at least one Covid Vaccine
+-- Shows Percentage of Population that has received at least one Covid Vaccine
 
 Select dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations
 , SUM(CAST(vac.new_vaccinations as REAL)) OVER (Partition by dea.Location Order by dea.location, dea.Date) as RollingPeopleVaccinated
