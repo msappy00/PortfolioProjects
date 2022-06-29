@@ -16,6 +16,7 @@ My code differs from the original in the following ways:
 
 The COVID dataset was taken from https://ourworldindata.org/covid-deaths
 
+2) Tableau Visualization (Data Visualization)
 
 These are courses linked to in the YouTube playlist. I've tagged each with my progress:
 
