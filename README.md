@@ -17,16 +17,16 @@ My code differs from the original in the following ways:
 The COVID dataset was taken from https://ourworldindata.org/covid-deaths
 
 
-These are courses linked to in the YouTube playlist. I've tagged each with my progress.
+These are courses linked to in the YouTube playlist. I've tagged each with my progress:
 
-Coursera Courses (https://www.coursera.org):
-* (auditing in progress) Google Data Analyst Certification
-* (not yet attempted) Data Analysis with Python
-* (not yet attempted) IBM Data Analysis Specialization
-* (not yet attempted) Tableau Data Visualization
+  Coursera Courses (https://www.coursera.org):
+  * (auditing in progress) Google Data Analyst Certification
+  * (not yet attempted) Data Analysis with Python
+  * (not yet attempted) IBM Data Analysis Specialization
+  * (not yet attempted) Tableau Data Visualization
 
-Udemy Courses (https://www.udemy.com):
-* (not yet attempted) Python for Data Analysis and Visualization
-* (not yet attempted) Statistics for Data Science
-* (not yet attempted) SQL for Data Analysts (SSMS)
-* (not yet attempted) Tableau A-Z
+  Udemy Courses (https://www.udemy.com):
+  * (not yet attempted) Python for Data Analysis and Visualization
+  * (not yet attempted) Statistics for Data Science
+  * (not yet attempted) SQL for Data Analysts (SSMS)
+  * (not yet attempted) Tableau A-Z
