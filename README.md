@@ -6,7 +6,7 @@ The end in mind is to contribute to an opensource project or find employment as 
 
 ![alt text](https://github.com/msappy00/PortfolioProjects/blob/main/plotly_table.png?raw=true)
 
-2) Plotly Dash (Data Visualization)
+2) Data Visualization
 
 ![alt text](https://github.com/msappy00/PortfolioProjects/blob/main/plotly_bar_graph.png?raw=true)
 
