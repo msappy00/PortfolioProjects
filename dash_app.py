@@ -55,9 +55,7 @@ bar_graph_fig = px.bar(df2, x='continent', y='total death count', color='contine
 bar_graph_fig.update(layout_showlegend=False)
 
 conn = sqlite3.connect("covid.db")
-df3 = pd.read_csv('test.csv')
-df3.rename(columns={'PercentPopulationInfected': 'percent infected'},
-           inplace=True)
+df3 = pd.read_csv('test.csv', names=['iso_code', 'location', 'population', 'max_infected', 'percent infected'])
 
 conn.close()
 
