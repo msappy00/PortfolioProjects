@@ -20,7 +20,6 @@ df1 = pd.read_sql_query("Select SUM(new_cases) as total_cases, "
                         "order by 1,2", conn)
 conn.close()
 
-
 df1['total_cases'] = df1['total_cases'].astype(int).map('{:,d}'.format)
 df1['total_deaths'] = df1['total_deaths'].astype(int).map('{:,d}'.format)
 df1['death_percentage'] = df1['death_percentage'].map("{:.2f}".format)
@@ -44,8 +43,8 @@ conn.close()
 df2.rename(columns={'total_death_count': 'total death count',
                     'location': 'continent'}, inplace=True)
 
-fig = px.bar(df2, x='continent', y='total death count', color='continent',
-             title='<b>Total Death Count by Continent</b>')
+fig = px.bar(df2, x='continent', y='total death count', color='continent')
+# title='<b>Total Death Count by Continent</b>'
 
 fig.update(layout_showlegend=False)
 
