@@ -3,7 +3,7 @@ A set of projects to showcase what I'm learning in the field of data analysis.
 The end in mind is to contribute to an opensource project or find employment as a data analyst.
 
 1) SQL Data Exploration
-![alt text](https://github.com/msappy00/PortfolioProjects/blob/main/LO_donut_graph.png?raw=true)
+![alt text](https://github.com/msappy00/PortfolioProjects/blob/main/plotly_table.png?raw=true)
 
 2) Plotly Dash (Data Visualization)
 ![alt text](https://github.com/msappy00/PortfolioProjects/blob/main/plotly_bar_graph.png?raw=true)
