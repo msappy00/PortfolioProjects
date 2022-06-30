@@ -30,7 +30,7 @@ df1.rename(columns={'total_cases': 'total cases',
                     }, inplace=True)
 
 conn = sqlite3.connect("covid.db")
-df2 = pd.read_sql_query("Select location, SUM(cast(new_deaths as int)) as total_death_count "
+df2 = pd.read_sql_query("Select location, SUM(cast(new_deaths as REAL)) as total_death_count "
                         "From CovidDeaths "
                         "Where continent is null "
                         "and location not in ('World', 'European Union', 'International', "
@@ -43,10 +43,24 @@ conn.close()
 df2.rename(columns={'total_death_count': 'total death count',
                     'location': 'continent'}, inplace=True)
 
-fig = px.bar(df2, x='continent', y='total death count', color='continent')
+bar_graph_fig = px.bar(df2, x='continent', y='total death count', color='continent')
 # title='<b>Total Death Count by Continent</b>'
 
-fig.update(layout_showlegend=False)
+bar_graph_fig.update(layout_showlegend=False)
+
+conn = sqlite3.connect("covid.db")
+df3 = pd.read_csv('test.csv')
+df3.rename(columns={'PercentPopulationInfected': 'percent infected'},
+           inplace=True)
+
+conn.close()
+
+map_fig = px.choropleth(df3, locations="location",
+                        color_continuous_scale='Viridis_r',
+                        color="percent infected",
+                        locationmode="country names",
+                        title='<b>Percent Population Infected by Country</b>')
+map_fig.update_layout(geo_bgcolor='lightblue')
 
 app.layout = html.Div(children=[
 
@@ -69,8 +83,13 @@ app.layout = html.Div(children=[
     html.H2(children='Total Death Count by Continent'),
 
     dcc.Graph(
-        id='my_graph',
-        figure=fig
+        id='bar_graph',
+        figure=bar_graph_fig
+    ),
+
+    dcc.Graph(
+        id='map_graph',
+        figure=map_fig
     )
 ])
 
