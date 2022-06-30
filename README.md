@@ -3,9 +3,10 @@ A set of projects to showcase what I'm learning in the field of data analysis.
 The end in mind is to contribute to an opensource project or find employment as a data analyst.
 
 1) COVID Data Exploration (SQL Data Exploration)
-![alt text](https://github.com/msappy00/PortfolioProjects/blob/main/covid_deaths.png?raw=true)
+![alt text](https://github.com/msappy00/PortfolioProjects/blob/main/LO_donut_graph.png?raw=true)
 
-2) Tableau Visualization (Data Visualization)
+2) Plotly Dash (Data Visualization)
+![alt text](https://github.com/msappy00/PortfolioProjects/blob/main/plotly_bar_graph.png?raw=true)
 
 The first two projects were built from https://github.com/AlexTheAnalyst/PortfolioProjects
 and a YouTube series taught by Alex The Analyst at https://www.youtube.com/watch?v=qfyynHBFOsM&list=PLUaB-1hjhk8H48Pj32z4GZgGWyylqv85f
@@ -15,6 +16,7 @@ My code differs from the original in the following ways:
 * I took the dataset about a year after the original project, so some queries had to be adjusted for value size.
 * For example: when converting columns to integers some values now exceed the max int value (2,147,483,647). Those values need to be converted to "bigint" instead of "int".
 * The file size for the csv file CovidVaccinations.csv exceeds the 25MB limit set by GitHub, so I've only uploaded the two .xlsx files
+* I'm using Plotly Dash instead of Tableau for the data visualizations
 
 The COVID dataset was taken from https://ourworldindata.org/covid-deaths
 
