@@ -4,9 +4,15 @@
 import sqlite3
 from dash import Dash, dash_table, html, dcc
 import plotly.express as px
+import dash_bootstrap_components as dbc
 import pandas as pd
 
 app = Dash(__name__)
+
+colors = {
+    'background': '#ffffff',
+    'text': '#00304E'
+}
 
 # assume you have a "long-form" data frame
 # see https://plotly.com/python/px-arguments/ for more options
@@ -62,35 +68,45 @@ map_fig = px.choropleth(df3, locations="location",
                         title='<b>Percent Population Infected by Country</b>')
 map_fig.update_layout(geo_bgcolor='lightblue')
 
-app.layout = html.Div(children=[
+table_spacer = html.H2(style={'height': 100})
+table_title = html.H4(children='Global Numbers', style={
+            'color': colors['text']
+        })
+table_view = dash_table.DataTable(
+    df1.to_dict('records'),
+    columns=[{"name": i, "id": i} for i in df1.columns],
+    style_cell={'textAlign': 'center'},
+    style_header={
+        'color': '#ffffff',
+        'backgroundColor': '#4F1E00',
+        'fontWeight': 'bold'
+    },
+    style_data={
+        'color': '#000000',
+        'backgroundColor': '#d3d3d3'
+    })
+map_view = dcc.Graph(
+    id='map_graph',
+    figure=map_fig
+)
 
-    html.H2(children='Global Numbers'),
+bar_graph_title = html.H4(children='Total Death Count by Continent', style={
+            'color': colors['text']})
+bar_graph_view = dcc.Graph(
+    id='bar_graph',
+    figure=bar_graph_fig
+)
 
-    dash_table.DataTable(
-        df1.to_dict('records'),
-        columns=[{"name": i, "id": i} for i in df1.columns],
-        style_cell={'textAlign': 'center'},
-        style_header={
-            'backgroundColor': '#008000',
-            'fontWeight': 'bold'
-        },
-        style_data={
-            'color': '#000000',
-            'backgroundColor': '#d3d3d3'
-        }
-    ),
-
-    html.H2(children='Total Death Count by Continent'),
-
-    dcc.Graph(
-        id='bar_graph',
-        figure=bar_graph_fig
-    ),
-
-    dcc.Graph(
-        id='map_graph',
-        figure=map_fig
-    )
+app.layout = html.Div(style={'backgroundColor': colors['background']}, children=[
+    dbc.Container([
+        dbc.Row([
+            dbc.Col([table_spacer, table_title, table_view], width=4),
+            dbc.Col(map_view, width=8),
+        ]),
+        dbc.Row([
+            dbc.Col([bar_graph_title, bar_graph_view], width=8)
+        ])
+    ])
 ])
 
 if __name__ == '__main__':
