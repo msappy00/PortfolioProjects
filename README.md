@@ -12,6 +12,7 @@ The end in mind is to contribute to an opensource project or find employment as 
 
 ![alt text](https://github.com/msappy00/PortfolioProjects/blob/main/map_plot.png?raw=true)
 
+![alt text](https://github.com/msappy00/PortfolioProjects/blob/main/time_series_chart.png?raw=true)
 
 The first two projects were built from https://github.com/AlexTheAnalyst/PortfolioProjects
 and a YouTube series taught by Alex The Analyst at https://www.youtube.com/watch?v=qfyynHBFOsM&list=PLUaB-1hjhk8H48Pj32z4GZgGWyylqv85f

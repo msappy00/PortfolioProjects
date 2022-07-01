@@ -56,7 +56,9 @@ bar_graph_fig = px.bar(df2, x='continent', y='total death count',
 bar_graph_fig.update(layout_showlegend=False)
 
 conn = sqlite3.connect("covid.db")
-df3 = pd.read_csv('test.csv', names=['iso_code', 'location', 'population', 'max_infected', 'percent infected'])
+df3 = pd.read_csv('bar_graph.csv',
+                  names=['iso_code', 'location', 'population', 'max_infected', 'percent infected'],
+                  )
 
 conn.close()
 
@@ -67,13 +69,26 @@ map_fig = px.choropleth(df3, locations="location",
                         title='<b>Percent Population Infected by Country</b>')
 map_fig.update_layout(geo_bgcolor='lightblue')
 
+conn = sqlite3.connect("covid.db")
+df4 = pd.read_csv('time_series.csv',
+                  names=['location', 'population', 'date', 'max infected', 'percent infected']
+                  )
+
+conn.close()
+
+time_series_fig = px.line(df4, x='date', y=['location', 'percent infected'],
+                          color='location',
+                          hover_data={"date": "|%B %d, %Y"},
+                          labels=dict(x="date", y="percent infected"),
+                          title='<b>Percent Population Infected by Country</b>')
+
 table_view = dash_table.DataTable(
     df1.to_dict('records'),
     columns=[{"name": i, "id": i} for i in df1.columns],
     style_cell={'textAlign': 'center'},
     style_header={
         'color': '#ffffff',
-        'backgroundColor': '#4F1E00',
+        'backgroundColor': '#209f88',
         'fontWeight': 'bold'
     },
     style_data={
@@ -92,13 +107,27 @@ bar_graph_view = dcc.Graph(
     figure=bar_graph_fig
 )
 
+time_series_view = dcc.Graph(
+    id='time_series_graph',
+    figure=time_series_fig
+)
+
 app.layout = dbc.Container([
     dbc.Row([
-        dbc.Col([html.H4("Global Counts"), table_view], align='center', width='auto'),
+        dbc.Col([html.Label("Global Counts",
+                            style={'font-family': 'Open Sans',
+                                   'font-sze': 17,
+                                   'font-weight': 'bold',
+                                   'color': '#2a3f5f'}),
+                 table_view],
+                align='center', width='auto'),
         dbc.Col(map_view, width='auto')
     ]),
     dbc.Row([
         dbc.Col(bar_graph_view)
+    ]),
+    dbc.Row([
+        dbc.Col(time_series_view)
     ])
 ])
 
