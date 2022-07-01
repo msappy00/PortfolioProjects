@@ -3,11 +3,11 @@
 
 import sqlite3
 from dash import Dash, dash_table, html, dcc
-import plotly.express as px
 import dash_bootstrap_components as dbc
+import plotly.express as px
 import pandas as pd
 
-app = Dash(__name__)
+app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 colors = {
     'background': '#ffffff',
@@ -49,8 +49,9 @@ conn.close()
 df2.rename(columns={'total_death_count': 'total death count',
                     'location': 'continent'}, inplace=True)
 
-bar_graph_fig = px.bar(df2, x='continent', y='total death count', color='continent')
-# title='<b>Total Death Count by Continent</b>'
+bar_graph_fig = px.bar(df2, x='continent', y='total death count',
+                       color='continent',
+                       title='<b>Total Death Count by Continent</b>')
 
 bar_graph_fig.update(layout_showlegend=False)
 
@@ -66,10 +67,6 @@ map_fig = px.choropleth(df3, locations="location",
                         title='<b>Percent Population Infected by Country</b>')
 map_fig.update_layout(geo_bgcolor='lightblue')
 
-table_spacer = html.H2(style={'height': 100})
-table_title = html.H4(children='Global Numbers', style={
-            'color': colors['text']
-        })
 table_view = dash_table.DataTable(
     df1.to_dict('records'),
     columns=[{"name": i, "id": i} for i in df1.columns],
@@ -82,28 +79,26 @@ table_view = dash_table.DataTable(
     style_data={
         'color': '#000000',
         'backgroundColor': '#d3d3d3'
-    })
+    }
+)
+
 map_view = dcc.Graph(
     id='map_graph',
     figure=map_fig
 )
 
-bar_graph_title = html.H4(children='Total Death Count by Continent', style={
-            'color': colors['text']})
 bar_graph_view = dcc.Graph(
     id='bar_graph',
     figure=bar_graph_fig
 )
 
-app.layout = html.Div(style={'backgroundColor': colors['background']}, children=[
-    dbc.Container([
-        dbc.Row([
-            dbc.Col([table_spacer, table_title, table_view], width=4),
-            dbc.Col(map_view, width=8),
-        ]),
-        dbc.Row([
-            dbc.Col([bar_graph_title, bar_graph_view], width=8)
-        ])
+app.layout = dbc.Container([
+    dbc.Row([
+        dbc.Col([html.H4("Global Counts"), table_view], align='center', width='auto'),
+        dbc.Col(map_view, width='auto')
+    ]),
+    dbc.Row([
+        dbc.Col(bar_graph_view)
     ])
 ])
 
