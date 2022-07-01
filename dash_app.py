@@ -122,14 +122,12 @@ app.layout = dbc.Container([
                                    'font-weight': 'bold',
                                    'color': '#2a3f5f'}),
                  table_view],
-                align='center', width='auto'),
-        dbc.Col(map_view, width='auto')
+                align='center', width=4),
+        dbc.Col(map_view, width=8)
     ]),
     dbc.Row([
-        dbc.Col(bar_graph_view)
-    ]),
-    dbc.Row([
-        dbc.Col(time_series_view)
+        dbc.Col(bar_graph_view, width=6),
+        dbc.Col(time_series_view, width=6)
     ])
 ])
 
