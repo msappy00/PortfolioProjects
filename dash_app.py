@@ -76,11 +76,13 @@ df4 = pd.read_csv('time_series.csv',
 
 conn.close()
 
-time_series_fig = px.line(df4, x='date', y=['location', 'percent infected'],
+time_series_fig = px.line(df4, x='date', y=['location', 'max infected'],
                           color='location',
                           hover_data={"date": "|%B %d, %Y"},
-                          labels=dict(x="date", y="percent infected"),
-                          title='<b>Percent Population Infected by Country</b>')
+                          title='<b>Max Infected by Country</b>',
+                          )
+time_series_fig.update_yaxes(
+        title_text="max infected",)
 
 table_view = dash_table.DataTable(
     df1.to_dict('records'),
