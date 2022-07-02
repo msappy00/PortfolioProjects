@@ -82,7 +82,7 @@ time_series_fig = px.line(df4, x='date', y=['location', 'max infected'],
                           title='<b>Max Infected by Country</b>',
                           )
 time_series_fig.update_yaxes(
-        title_text="max infected",)
+    title_text="max infected", )
 
 table_view = dash_table.DataTable(
     df1.to_dict('records'),
@@ -116,13 +116,20 @@ time_series_view = dcc.Graph(
 
 app.layout = dbc.Container([
     dbc.Row([
-        dbc.Col([html.Label("Global Counts",
-                            style={'font-family': 'Open Sans',
-                                   'font-sze': 17,
-                                   'font-weight': 'bold',
-                                   'color': '#2a3f5f'}),
-                 table_view],
-                align='center', width=4),
+        dbc.Col([
+            html.H1("Covid-19 Dashboard",
+                    style={'font-family': 'Open Sans',
+                           'font-sze': 32,
+                           'font-weight': 'bold',
+                           'color': '#2a3f5f'}),
+            html.Div(style={'height': 75}),
+            html.Label("Global Counts",
+                       style={'font-family': 'Open Sans',
+                              'font-sze': 17,
+                              'font-weight': 'bold',
+                              'color': '#2a3f5f'}),
+            table_view],
+            align='center', width=4),
         dbc.Col(map_view, width=8)
     ]),
     dbc.Row([
