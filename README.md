@@ -16,6 +16,14 @@ My code differs from the original in the following ways:
 
 The COVID dataset was taken from https://ourworldindata.org/covid-deaths
 
+2) Nashville Housing Data
+
+The dataset here was cleaned up using standard SQL methods.
+
+3) Movie Data Correlation
+
+The dataset was scraped from IMDb and analyzed using Python with a focus on data correlation.
+
 These are courses on my todo list. I've tagged each with my progress:
 
   Coursera Courses (https://www.coursera.org):
