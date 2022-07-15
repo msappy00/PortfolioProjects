@@ -1,5 +1,4 @@
 import pandas as pd
-import csv
 import sqlite3
 
 # df = pd.read_csv('https://covid.ourworldindata.org/data/owid-covid-data.csv')
