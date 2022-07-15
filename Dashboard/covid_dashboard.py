@@ -21,7 +21,7 @@ conn = sqlite3.connect("covid.db")
 df1 = pd.read_sql_query("Select SUM(new_cases) as total_cases, "
                         "SUM(cast(new_deaths as REAL)) as total_deaths, "
                         "SUM(cast(new_deaths as REAL))/SUM(New_Cases)*100 as death_percentage "
-                        "From CovidDeaths "
+                        "From covid_data "
                         "where continent is not null "
                         "order by 1,2", conn)
 conn.close()
@@ -37,7 +37,7 @@ df1.rename(columns={'total_cases': 'total cases',
 
 conn = sqlite3.connect("covid.db")
 df2 = pd.read_sql_query("Select location, SUM(cast(new_deaths as REAL)) as total_death_count "
-                        "From CovidDeaths "
+                        "From covid_data "
                         "Where continent is null "
                         "and location not in ('World', 'European Union', 'International', "
                         "'High income', 'Upper middle income', 'Lower middle income', 'Low income') "
@@ -56,27 +56,32 @@ bar_graph_fig = px.bar(df2, x='continent', y='total death count',
 bar_graph_fig.update(layout_showlegend=False)
 
 conn = sqlite3.connect("covid.db")
-df3 = pd.read_csv('bar_graph.csv',
-                  names=['iso_code', 'location', 'population', 'max_infected', 'percent infected'],
-                  )
+df3 = pd.read_sql_query(
+    "Select location, Population, MAX(total_cases) as HighestInfectionCount,  "
+    "Max((total_cases/population))*100 as Infected "
+    "From covid_data "
+    "Group by Location, Population "
+    "order by Infected desc", conn)
 
 conn.close()
 
 map_fig = px.choropleth(df3, locations="location",
                         color_continuous_scale='Viridis_r',
-                        color="percent infected",
+                        color="Infected",
                         locationmode="country names",
                         title='<b>Percent Population Infected by Country</b>')
 map_fig.update_layout(geo_bgcolor='lightblue')
 
 conn = sqlite3.connect("covid.db")
-df4 = pd.read_csv('time_series.csv',
-                  names=['location', 'population', 'date', 'max infected', 'percent infected']
-                  )
+df4 = pd.read_sql_query(
+    "Select location, population, date, total_cases "
+    "From covid_data "
+    "Where location in ('United States', 'India', 'Brazil', 'Russia', 'Mexico', 'Taiwan') "
+    "order by total_cases desc", conn)
 
 conn.close()
 
-time_series_fig = px.line(df4, x='date', y=['location', 'max infected'],
+time_series_fig = px.line(df4, x='date', y='total_cases',
                           color='location',
                           hover_data={"date": "|%B %d, %Y"},
                           title='<b>Max Infected by Country</b>',

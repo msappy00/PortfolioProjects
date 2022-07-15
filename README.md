@@ -9,6 +9,8 @@ The end in mind is to contribute to an opensource project or find employment as 
 The Covid Dashboard was built from https://github.com/AlexTheAnalyst/PortfolioProjects
 and a YouTube series taught by Alex The Analyst at https://www.youtube.com/watch?v=qfyynHBFOsM&list=PLUaB-1hjhk8H48Pj32z4GZgGWyylqv85f
 
+A 'live' version of my dashboard is up at https://msappy00.pythonanywhere.com/
+
 My code differs from the original in the following ways:
 * I used DBeaver Universal Database Manager instead of Microsoft SQL Server
 * The dataset I used was taken about a year after the original project
