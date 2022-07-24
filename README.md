@@ -20,4 +20,13 @@ The dataset here was cleaned up using standard SQL methods.
 
 The dataset was scraped from IMDb and analyzed using Python with a focus on data correlation.
 
-4) I'm working on ideas for my next project, maybe something with more of a focus on decision-making.
+4) Statistical Analysis
+![alt text](https://github.com/msappy00/PortfolioProjects/blob/main/wnba_v_nba.png?raw=true)
+
+WNBA players had a median salary of $119,890 with the highest at $221,450. The mean salary 
+($127,695) was close to the median. Salaries were slightly skewed to the right.
+
+NBA players had a median salary of $1,939,350 with the highest at $45,780,966. The mean 
+salary ($5,650,247) was far from the median. Salaries were heavily skewed to the right.
+
+5) I'm working on ideas for my next project, maybe something with more of a focus on decision-making.
