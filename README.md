@@ -21,6 +21,9 @@ The dataset here was cleaned up using standard SQL methods.
 The dataset was scraped from IMDb and analyzed using Python with a focus on data correlation.
 
 4) Statistical Analysis
+
+The data here was scraped from https://www.spotrac.com
+
 ![alt text](https://github.com/msappy00/PortfolioProjects/blob/main/wnba_v_nba.png?raw=true)
 
 WNBA players had a median salary of $119,890 with the highest at $221,450. The mean salary 
